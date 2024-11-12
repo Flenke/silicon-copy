@@ -1,0 +1,202 @@
+@import "assets/css/components/1-main/mixin.scss";
+@import "assets/css/components/1-main/variables.scss";
+.join {
+  &__inner {
+    background: $body-light;
+    padding: 72px 50px;
+    &-content {
+      max-width: 1076px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &-form {
+      width: calc(50% - 15px);
+      max-width: 472px;
+    }
+    &-title {
+      display: flex;
+      width: 50%;
+      align-items: center;
+      max-width: 526px;
+      h4 {
+        color: $title-color;
+      }
+      &-icon {
+        width: 78px;
+        height: 78px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 32px;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+.input {
+  position: relative;
+  input {
+    width: 100%;
+    padding: 13px 150px 13px 44px;
+    background: $white;
+    border: 1px solid #d4d7e5;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    border-radius: 8px 0 0 8px;
+    color: $text-color;
+    &::placeholder {
+      opacity: 0.4;
+    }
+
+    @include darkIn {
+      background: #ffffff02;
+      border-radius: 8px;
+      border: 1px solid #ffffff18;
+    }
+  }
+  span {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    @include transformY;
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 142px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: $primary;
+    font-family: $mainFont;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 160%;
+    color: $white;
+    @include transition;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+.errorText {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 0;
+  width: 100%;
+  font-size: 12px;
+  line-height: 16px;
+  color: red;
+}
+// 1240px
+@include xlg-xxlg-extra {
+  .join {
+    &__inner {
+      &-title {
+        &-icon {
+          width: 60px;
+          height: 60px;
+          margin-right: 20px;
+        }
+        h4 {
+          width: calc(100% - 80px);
+        }
+      }
+    }
+  }
+}
+// 1024px
+@include lg-xlg {
+  .join {
+    &__inner {
+      padding: 54px 32px;
+      &-title {
+        &-icon {
+          width: 54px;
+          height: 54px;
+          margin-right: 16px;
+        }
+        h4 {
+          width: calc(100% - 70px);
+        }
+      }
+    }
+  }
+}
+// 840px
+@include md-lg-extra {
+  .join {
+    &__inner {
+      &-content {
+        flex-direction: column;
+      }
+      &-title {
+        width: 100%;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 24px;
+        &-icon {
+          margin: 0 0 16px 0;
+        }
+        h4 {
+          width: 100%;
+        }
+      }
+
+      &-form {
+        width: 100%;
+      }
+    }
+  }
+}
+// 540px
+@include xsm-sm {
+  .join {
+    &__inner {
+      padding: 32px 20px;
+      &-form {
+        flex-direction: column;
+      }
+    }
+  }
+  .input {
+    overflow: unset;
+    input {
+      border-radius: 6px;
+      margin-bottom: 20px;
+      padding-right: 16px;
+    }
+    span {
+      @include transformReset;
+      top: 16px;
+    }
+    button {
+      position: static;
+      padding: 12px;
+      width: 100%;
+      border-radius: 6px;
+    }
+  }
+  .errorText {
+    top: 54px;
+  }
+}

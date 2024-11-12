@@ -1,0 +1,111 @@
+@import "assets/css/components/1-main/mixin.scss";
+@import "assets/css/components/1-main/variables.scss";
+.detail {
+  padding: 98px 0;
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &-map {
+      width: calc(50% - 15px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      overflow: hidden;
+      img {
+        width: 100%;
+      }
+    }
+    &-content {
+      width: calc(50% - 15px);
+      max-width: 416px;
+      &-items {
+        margin-bottom: 48px;
+        h4 {
+          color: $title-color;
+          margin-bottom: 24px;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      &-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 12px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        &-icon {
+          width: 20px;
+          height: 20px;
+          color: $primary;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 3px 8px 3px 0;
+          svg {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        p {
+          width: calc(100% - 28px);
+          span {
+            color: $title-color;
+            font-weight: 700;
+          }
+        }
+      }
+      &-socials {
+        display: flex;
+        a {
+          width: 44px;
+          height: 44px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: $title-color;
+          margin-right: 16px;
+          background: $body-light;
+          @include transition;
+          cursor: pointer;
+          border-radius: 6px;
+          &:hover {
+            background: $primary;
+            color: $white;
+          }
+          &:last-child {
+            margin: 0;
+          }
+          svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+// 840px
+@include md-lg-extra {
+  .detail {
+    padding: 70px 0;
+    &__inner {
+      flex-direction: column;
+      &-content {
+        width: 100%;
+        max-width: unset;
+      }
+      &-map {
+        width: 100%;
+        height: 300px;
+        margin-bottom: 40px;
+        img {
+          @include fullImage;
+        }
+      }
+    }
+  }
+}

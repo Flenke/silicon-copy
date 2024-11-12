@@ -1,0 +1,210 @@
+@import "assets/css/components/1-main/mixin.scss";
+@import "assets/css/components/1-main/variables.scss";
+.intro {
+  padding-top: 200px;
+  position: relative;
+  background: radial-gradient(
+    116.18% 118% at 50% 100%,
+    rgba(99, 102, 241, 0.1) 0%,
+    rgba(218, 70, 239, 0.05) 41.83%,
+    rgba(241, 244, 253, 0.07) 82.52%
+  );
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    &-content {
+      width: calc(40% - 15px);
+      max-width: 526px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 36px 0 64px 0;
+      h1 {
+        color: $title-color;
+        margin-bottom: 24px;
+      }
+      p {
+        margin-bottom: 48px;
+      }
+      &-anchor {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        span {
+          display: flex;
+          align-items: center;
+          width: 44px;
+          height: 44px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: $white;
+          box-shadow: 0px 4.4px 12px -1px rgba(19, 16, 34, 0.06),
+            0px 2px 6.4px -1px rgba(19, 16, 34, 0.03);
+          border-radius: 40px;
+          color: $title-color;
+          margin-right: 16px;
+          @include darkIn {
+            background: #ffffff05;
+          }
+          svg {
+            width: 24px;
+            height: 24px;
+          }
+        }
+      }
+    }
+    &-btns {
+      display: flex;
+      justify-content: space-between;
+      max-width: 384px;
+      button {
+        width: calc(50% - 12px);
+        background: $title-color;
+        border-radius: 8px;
+        display: flex;
+        height: 52px;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        @include transition;
+        position: relative;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+    &-image {
+      width: 60%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+.apple {
+  &::before {
+    width: 136px;
+    height: 36px;
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    @include transform;
+    background: url(./btns/apple.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    @include darkIn {
+      background: url(./btns/darkApple.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+}
+.google {
+  &::before {
+    width: 136px;
+    height: 36px;
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    @include transform;
+    background: url(./btns/google.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    @include darkIn {
+      background: url(./btns/darkGoogle.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+}
+// 1380px
+@include xxlg-xxxlg {
+  .intro {
+    padding-top: 160px;
+  }
+}
+// 1240px
+@include xlg-xxlg-extra {
+  .intro {
+    padding-top: 120px;
+    &__inner {
+      &-content {
+        padding: 36px 0;
+        p {
+          margin-bottom: 24px;
+        }
+      }
+      &-btns {
+        max-width: 300px;
+        button {
+          height: 40px;
+        }
+      }
+    }
+  }
+  .apple {
+    &::before {
+      width: 100px;
+      height: 28px;
+    }
+  }
+  .google {
+    &::before {
+      width: 100px;
+      height: 28px;
+    }
+  }
+}
+// 1024px
+@include lg-xlg {
+  .intro {
+    &__inner {
+      align-self: flex-end;
+      &-content {
+        &-text {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+// 840px
+@include md-lg-extra {
+  .intro {
+    padding: 100px 0 0 0;
+    &__inner {
+      flex-direction: column;
+      &-content {
+        width: 100%;
+        max-width: unset;
+      }
+      &-image {
+        width: 100%;
+        max-width: 540px;
+      }
+    }
+  }
+}
+// 540px
+@include xsm-sm {
+  .intro {
+    &__inner {
+      &-btns {
+        max-width: 260px;
+        button {
+          width: calc(50% - 8px);
+        }
+      }
+    }
+  }
+}

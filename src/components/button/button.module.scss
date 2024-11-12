@@ -1,0 +1,36 @@
+@import "assets/css/components/1-main/mixin.scss";
+@import "assets/css/components/1-main/variables.scss";
+.button {
+  padding: 9px 20px;
+  font-family: $mainFont;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  @include transition;
+  border-radius: 4px;
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+  &.primary {
+    color: $white;
+    background: $primary;
+    svg {
+      margin-left: 8px;
+    }
+  }
+  &.sign {
+    color: $white;
+    background: $primary;
+    svg {
+      margin-right: 8px;
+    }
+  }
+}

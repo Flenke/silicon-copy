@@ -1,0 +1,21 @@
+@import "assets/css/components/1-main/mixin.scss";
+@import "assets/css/components/1-main/variables.scss";
+.footer {
+  padding: 54px 0;
+  &__inner {
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 160%;
+    color: #9397ad;
+    @include darkIn {
+      color: #ffffff50;
+    }
+  }
+}
+// 1240px
+@include xlg-xxlg-extra {
+  .footer {
+    padding: 24px 0;
+  }
+}
